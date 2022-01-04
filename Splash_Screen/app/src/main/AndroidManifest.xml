@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Splash_Screen">
         <activity
+            android:name=".Main_page"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

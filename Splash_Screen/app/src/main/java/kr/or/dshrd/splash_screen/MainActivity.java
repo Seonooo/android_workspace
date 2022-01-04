@@ -2,12 +2,15 @@ package kr.or.dshrd.splash_screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.window.SplashScreen;
 
 import org.w3c.dom.Text;
 
@@ -41,5 +44,16 @@ public class MainActivity extends AppCompatActivity {
         image.setAnimation(topanim);
         tit1.setAnimation(bottomanim);
         tit2.setAnimation(bottomanim);
+
+        //다음페이지 넘길 Splash 적용
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,Main_page.class);
+                startActivity(intent);
+                finish();
+            }
+        },SPLASH_SCREEN);
+
     }
 }
