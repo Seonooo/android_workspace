@@ -55,14 +55,31 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
-            android:id="@+id/username"
+            android:hint="Fullname"
+            android:id="@+id/fullname"
             android:layout_marginTop="0dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:id="@+id/username"
+            android:layout_marginTop="0dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
 
 
 
@@ -72,14 +89,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            app:passwordToggleEnabled="true"
             android:layout_marginTop="10dp"
             android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
 
 
 
@@ -88,15 +105,15 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password_again"
+            android:hint="Phone Number"
             android:layout_marginTop="10dp"
-            app:passwordToggleEnabled="true"
-            android:id="@+id/Password_again"
+            android:id="@+id/phone_number"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
 
 
@@ -108,17 +125,21 @@
             android:hint="Email"
             android:layout_marginTop="10dp"
             android:id="@+id/email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
 
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
+<!--        join-->
         <Button
+            android:id="@+id/Go_join"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#000000"
@@ -128,7 +149,9 @@
             android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
+<!--        main-->
         <Button
+            android:id="@+id/Go_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go Back"

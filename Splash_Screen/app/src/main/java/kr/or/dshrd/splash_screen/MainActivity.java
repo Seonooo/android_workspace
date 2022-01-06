@@ -14,6 +14,8 @@ import android.window.SplashScreen;
 
 import org.w3c.dom.Text;
 
+import kr.or.dshrd.splash_screen.Common.OnBoarding;
+
 public class MainActivity extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,Join.class);
+                Intent intent = new Intent(MainActivity.this, OnBoarding.class);
                 startActivity(intent);
                 finish();
             }

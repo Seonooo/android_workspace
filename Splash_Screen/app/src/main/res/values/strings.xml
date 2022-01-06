@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Splash_Screen</string>
+
+    <!-- OnBoarding string -->
+    <string name="first_slider_title">Confucius</string>
+    <string name="second_slider_title">Socrates</string>
+    <string name="third_slider_title">Oprah Winfrey</string>
+    <string name="fourth_slider_title">Confucius</string>
+
+    <!-- Description -->
+    <string name="first_slider_desc">Respect yourself and others will respect you.</string>
+    <string name="second_slider_desc">The way to gain a good reputation is to endeavor to be what you desire to appear.</string>
+    <string name="third_slider_desc">Everything in your world is created by what you think.</string>
+    <string name="fourth_slider_desc">Respect yourself and others will respect you.</string>
+
+    <!--button-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_btn">Lets Get Started</string>
 </resources>
