@@ -16,12 +16,11 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private static int SPLASH_SCREEN = 5000;
     //애니변수 지정
     Animation topanim, bottomanim;
     ImageView image;
     TextView tit1, tit2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +48,10 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,Main_page.class);
+                Intent intent = new Intent(MainActivity.this,Join.class);
                 startActivity(intent);
                 finish();
             }
         },SPLASH_SCREEN);
-
     }
 }
