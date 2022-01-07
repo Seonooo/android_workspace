@@ -3,6 +3,7 @@ package kr.or.dshrd.splash_screen;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Animation topanim, bottomanim;
     ImageView image;
     TextView tit1, tit2;
+
+    SharedPreferences OnBoardingScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +53,25 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, OnBoarding.class);
-                startActivity(intent);
-                finish();
+
+                OnBoardingScreen = getSharedPreferences("OnBoardingScreen",MODE_PRIVATE);
+                boolean isFirstTime = OnBoardingScreen.getBoolean("firstTime", true);
+
+                if (isFirstTime){
+                    SharedPreferences.Editor editor = OnBoardingScreen.edit();
+                    editor.putBoolean("firstTime",false);
+                    editor.commit();
+
+                    Intent intent = new Intent(MainActivity.this, OnBoarding.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(MainActivity.this, Main_page.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+
             }
         },SPLASH_SCREEN);
     }
