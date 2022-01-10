@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="260dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="8dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/order_image"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/order_01"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/order_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apple Watch"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/raleway_bold"/>
+
+        <RatingBar
+            android:id="@+id/order_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="4"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:progressTint="@color/rating_star"
+            android:progressBackgroundTint="@color/rating_back"/>
+            <!--android:numStars="5"-->
+            <!--android:stepSize="1"-->
+
+        <TextView
+            android:id="@+id/order_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available when you\n purchase any new iPhone\n, iPad, iPod Touch."
+            android:textSize="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/raleway_bold"
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

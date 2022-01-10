@@ -1,20 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_page">
+    android:orientation="vertical"
+    tools:context=".Main_page"
+    android:background="@color/main_background">
 
-    <TextView
-        android:id="@+id/army1"
-        android:layout_width="wrap_content"
+
+    <!-- 상단메뉴 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="접속을 환영합니다"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/menu_icon"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/add_icon"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"/>
+
+
+
+
+    </RelativeLayout>
+
+    <!-- scrollview -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 검색 바 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/round">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search..."
+                        android:textSize="18sp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="#000"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/search"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"/>
+
+
+
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 상단 퀵 메뉴 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+                <!--quick1-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/quick_round"
+                        android:elevation="10dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/quick1" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu_01"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+                <!--quick2-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/quick_round"
+                        android:elevation="10dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/quick2" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu_02"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+                <!--quick3-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/quick_round"
+                        android:elevation="10dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/quick3" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu_03"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+                <!--quick4-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/quick_round"
+                        android:elevation="10dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/quick4" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu_04"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <!-- Order online collect -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp">
+
+                <!-- 좌측 타이틀 영역 -->
+                <LinearLayout
+                    android:id="@+id/order_title"
+                    android:layout_width="160dp"
+                    android:layout_height="260dp"
+                    android:background="@color/order_background"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_online_collect"
+                        android:textSize="36dp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/raleway_bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_collect_desc"
+                        android:textSize="12dp"
+                        android:layout_marginTop="10dp"/>
+
+
+                </LinearLayout>
+
+                <!-- 우측 Recyclerview 영역 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/order_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/order_title">
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+            <!-- Product Viewed -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Product Viewed 타틀 영역 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/product_viewed"
+                        android:textSize="24dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/purple_200"/>
+                    <!-- Product Viewed Recyclerview 영역 -->
+
+
+
+                </RelativeLayout>
+
+                <!-- Product Viewed Recycle 영역-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pro_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"/>
+
+
+            </LinearLayout>
+
+            <!-- CATEGORIES -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:padding="20dp">
+
+                <!-- CATEGORIES Title 영역 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/CATEGORIES"
+                        android:textSize="24dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_more"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/purple_200"/>
+
+                </RelativeLayout>
+
+                <!-- CATEGORIES Recyclerview -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cate_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

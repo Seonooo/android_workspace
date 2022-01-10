@@ -17,4 +17,11 @@
     <string name="skip_btn">Skip</string>
     <string name="next_btn">Next</string>
     <string name="let_get_btn">Lets Get Started</string>
+
+    <!--main_page-->
+    <string name="order_online_collect">Order\nonline\ncollect</string>
+    <string name="order_collect_desc">Available when you\n purchase any new\n iPhone, iPad, iPod\n Touch</string>
+    <string name="product_viewed">Product Viewed</string>
+    <string name="see_more">see more</string>
+    <string name="CATEGORIES">CATEGORIES</string>
 </resources>
