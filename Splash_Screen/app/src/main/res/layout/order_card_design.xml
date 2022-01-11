@@ -31,16 +31,22 @@
             android:textColor="@color/black"
             android:fontFamily="@font/raleway_bold"/>
 
-        <RatingBar
+        <TextView
             android:id="@+id/order_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="4"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:progressTint="@color/rating_star"
-            android:progressBackgroundTint="@color/rating_back"/>
-            <!--android:numStars="5"-->
-            <!--android:stepSize="1"-->
+            android:text="★★★☆☆"/>
+
+<!--        <RatingBar-->
+<!--            android:id="@+id/order_rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:rating="4"-->
+<!--            style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--            android:progressTint="@color/rating_star"-->
+<!--            android:progressBackgroundTint="@color/rating_back"/>-->
+<!--            &lt;!&ndash;android:numStars="5"&ndash;&gt;-->
+<!--            &lt;!&ndash;android:stepSize="1"&ndash;&gt;-->
 
         <TextView
             android:id="@+id/order_desc"

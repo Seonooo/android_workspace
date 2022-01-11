@@ -37,7 +37,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         OrderHelperClass orderHelperClass = orderLocation.get(position);
         holder.image.setImageResource(orderHelperClass.getImage());
         holder.title.setText(orderHelperClass.getTitle());
-        holder.ratingBar.setRating(orderHelperClass.getRatingBar());
+        holder.rating.setText(orderHelperClass.getRating());
         holder.desc.setText(orderHelperClass.getDescription());
 
 
@@ -51,8 +51,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public static class OrderViewHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
-        TextView title, desc;
-        RatingBar ratingBar;
+        TextView title, desc, rating;
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,7 +59,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             // Hooks
             image = itemView.findViewById(R.id.order_image);
             title = itemView.findViewById(R.id.order_name);
-            ratingBar = itemView.findViewById(R.id.order_rating);
+            rating = itemView.findViewById(R.id.order_rating);
             desc = itemView.findViewById(R.id.order_desc);
         }
     }

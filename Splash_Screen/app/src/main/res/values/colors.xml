@@ -15,7 +15,7 @@
     <!-- Contents Colors   -->
     <color name="order_background">#E8F9FA</color>
     <!-- rating color -->
-    <color name="rating_star">#FF9F9F</color>
+    <color name="rating_star">#C6A6FF</color>
     <color name="rating_back">#002E3536</color>
 
 

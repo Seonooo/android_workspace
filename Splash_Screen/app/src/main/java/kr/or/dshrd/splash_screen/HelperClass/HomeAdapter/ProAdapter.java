@@ -37,9 +37,8 @@ public class ProAdapter extends RecyclerView.Adapter<ProAdapter.ProViewHolder>  
         OrderHelperClass orderHelperClass = proLocation.get(position);
         holder.image.setImageResource(orderHelperClass.getImage());
         holder.title.setText(orderHelperClass.getTitle());
-        holder.ratingBar.setRating(orderHelperClass.getRatingBar());
+        holder.rating.setText(orderHelperClass.getRating());
         holder.desc.setText(orderHelperClass.getDescription());
-
 
     }
 
@@ -51,8 +50,7 @@ public class ProAdapter extends RecyclerView.Adapter<ProAdapter.ProViewHolder>  
     public static class ProViewHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
-        TextView title, desc;
-        RatingBar ratingBar;
+        TextView title, desc, rating;
 
         public ProViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,7 +58,7 @@ public class ProAdapter extends RecyclerView.Adapter<ProAdapter.ProViewHolder>  
             // Hooks
             image = itemView.findViewById(R.id.pro_image);
             title = itemView.findViewById(R.id.pro_title);
-            ratingBar = itemView.findViewById(R.id.pro_rating);
+            rating = itemView.findViewById(R.id.pro_rating);
             desc = itemView.findViewById(R.id.pro_desc);
         }
     }

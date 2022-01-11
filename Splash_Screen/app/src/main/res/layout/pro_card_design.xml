@@ -32,16 +32,24 @@
 
         <!--above : 위로, below : 밑으로-->
 
-        <RatingBar
+        <TextView
             android:id="@+id/pro_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/pro_image"
             android:layout_below="@+id/pro_title"
-            android:rating="3.5"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:progressTint="@color/rating_star"
-            android:progressBackgroundTint="@color/rating_back" />
+            android:text="★★★☆☆"/>
+
+<!--        <RatingBar-->
+<!--            android:id="@+id/pro_rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toRightOf="@+id/pro_image"-->
+<!--            android:layout_below="@+id/pro_title"-->
+<!--            android:rating="3.5"-->
+<!--            style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--            android:progressTint="@color/rating_star"-->
+<!--            android:progressBackgroundTint="@color/rating_back" />-->
 
         <TextView
             android:id="@+id/pro_desc"

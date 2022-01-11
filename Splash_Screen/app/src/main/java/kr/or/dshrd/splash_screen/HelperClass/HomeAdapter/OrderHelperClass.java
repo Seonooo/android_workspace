@@ -5,13 +5,12 @@ import android.widget.RatingBar;
 public class OrderHelperClass {
 
     int image;
-    String title, description;
-    RatingBar ratingBar;
+    String title, description, rating;
 
-    public OrderHelperClass(int image, String title, RatingBar ratingBar , String description ) {
+    public OrderHelperClass(int image, String title, String rating , String description ) {
         this.image = image;
         this.title = title;
-        this.ratingBar = ratingBar;
+        this.rating = rating;
         this.description = description;
     }
 
@@ -24,8 +23,8 @@ public class OrderHelperClass {
         return title;
     }
 
-    public RatingBar getRatingBar() {
-        return ratingBar;
+    public String getRating() {
+        return rating;
     }
 
     public String getDescription() {

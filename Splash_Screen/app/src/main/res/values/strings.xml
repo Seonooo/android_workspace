@@ -24,4 +24,28 @@
     <string name="product_viewed">Product Viewed</string>
     <string name="see_more">see more</string>
     <string name="CATEGORIES">CATEGORIES</string>
+
+<!--    menu-->
+    <string name="home">HOME</string>
+    <string name="search">SEARCH</string>
+    <string name="products">PRODUCTS</string>
+    <string name="location">LOCATION</string>
+
+    <string name="login">LOGIN</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+
+    <string name="menu_01">Menu_01</string>
+    <string name="menu_02">Menu_02</string>
+    <string name="menu_03">Menu_03</string>
+    <string name="menu_04">Menu_04</string>
+
+    <string name="share">Share</string>
+    <string name="contact_us">Contact Us</string>
+
+<!--    menu holder-->
+    <string name="menu_top">LOGO Title</string>
+    <string name="menu_desc">Hit the orange button down</string>
+
+
 </resources>
