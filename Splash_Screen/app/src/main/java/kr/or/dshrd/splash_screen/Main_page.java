@@ -4,6 +4,7 @@ import static androidx.recyclerview.widget.RecyclerView.*;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -47,15 +49,37 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
         cateRecycler = findViewById(R.id.cate_recycler);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
+        menuicon = findViewById(R.id.menu_icon);
 
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(this);
-        
-
+        navigationDrawer();
         orderRecycler();
         proRecycler();
         cateRecycler();
     }
+
+    private void navigationDrawer() {
+
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+        menuicon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (drawerLayout.isDrawerVisible(GravityCompat.START))
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                else drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+    }
+    @Override
+    public void onBackPressed(){
+        if(drawerLayout.isDrawerVisible(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else
+            super.onBackPressed();
+    }
+
+
 
     // recyclerview 노출할 화면 사이즈 픽스
     private void orderRecycler() {

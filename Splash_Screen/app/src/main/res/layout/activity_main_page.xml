@@ -16,7 +16,8 @@
         android:background="@color/white"
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu"
+        android:theme="@style/navigationTheme"/>
 
 
     <LinearLayout
@@ -30,19 +31,19 @@
         android:layout_height="wrap_content"
         android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/menu_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/menu_icon" />
+            <ImageView
+                android:id="@+id/menu_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu_icon" />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/add_icon"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/add_icon"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"/>
 
 
 
@@ -74,22 +75,19 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Search..."
-                        android:textSize="18sp"
-                        android:layout_marginLeft="20dp"
                         android:layout_centerVertical="true"
-                        android:textColor="#000"/>
+                        android:layout_marginLeft="20dp"
+                        android:text="Search..."
+                        android:textColor="#000"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/search"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"/>
-
-
-
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/search" />
 
 
                 </RelativeLayout>

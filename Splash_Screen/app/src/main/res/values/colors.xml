@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="customer_100">#A36FFF</color>
+    <color name="customer_200">#FF9C9C</color>
 
     <!-- mainpage color-->
 
@@ -17,6 +19,16 @@
     <!-- rating color -->
     <color name="rating_star">#C6A6FF</color>
     <color name="rating_back">#002E3536</color>
+
+<!--    Menu Style -->
+    <style name="navigationTheme">
+
+<!--        메뉴 선택시 컬러 -->
+        <item name="colorPrimary">@color/customer_100</item>
+<!--        메뉴 배경 색 -->
+        <item name="colorControlHighlight">@color/customer_200</item>
+
+    </style>
 
 
 </resources>
