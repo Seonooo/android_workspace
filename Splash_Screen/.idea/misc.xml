@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/drawable/pro_round.xml" value="0.3351851851851852" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/drawable/quick_round.xml" value="0.3398148148148148" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/drawable/round.xml" value="0.3398148148148148" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/drawable/skip_icon.xml" value="0.32037037037037036" />
+        <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/layout/activity_all_categories.xml" value="0.33" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/layout/activity_join.xml" value="0.32653985507246375" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/android_workspace/Splash_Screen/app/src/main/res/layout/activity_main.xml" value="0.33" />

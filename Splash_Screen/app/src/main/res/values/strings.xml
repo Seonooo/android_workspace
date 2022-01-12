@@ -25,7 +25,7 @@
     <string name="see_more">see more</string>
     <string name="CATEGORIES">CATEGORIES</string>
 
-<!--    menu-->
+    <!--    menu-->
     <string name="home">HOME</string>
     <string name="search">SEARCH</string>
     <string name="products">PRODUCTS</string>
@@ -43,7 +43,7 @@
     <string name="share">Share</string>
     <string name="contact_us">Contact Us</string>
 
-<!--    menu holder-->
+    <!--    menu holder-->
     <string name="menu_top">LOGO Title</string>
     <string name="menu_desc">Hit the orange button down</string>
 

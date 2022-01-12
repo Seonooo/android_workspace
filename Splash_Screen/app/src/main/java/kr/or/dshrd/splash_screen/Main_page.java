@@ -9,11 +9,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -29,10 +31,12 @@ import kr.or.dshrd.splash_screen.HelperClass.HomeAdapter.ProAdapter;
 public class Main_page extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     // 선언
+    static final float END_SCALE = 0.7f;
     RecyclerView orderRecycler, proRecycler, cateRecycler;
     RecyclerView.Adapter adapter;
     private GradientDrawable gradient1, gradient2, gradient3, gradient4 ;
     ImageView menuicon;
+    LinearLayout contenView;
 
     // Drawer menu
     DrawerLayout drawerLayout;
@@ -50,6 +54,9 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         menuicon = findViewById(R.id.menu_icon);
+
+        contenView = findViewById(R.id.conten);
+
 
         navigationDrawer();
         orderRecycler();
@@ -70,7 +77,45 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
                 else drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+        // Navigation animation 처리
+
+        animateNavigationDrawer();
+
     }
+
+    private void animateNavigationDrawer() {
+
+        //메뉴바 열었을 때 뒤에 색변경
+        drawerLayout.setScrimColor(getResources().getColor(R.color.design_default_color_on_primary));
+
+        //메뉴바 열었을 때 오른쪽으로 화면 옮기기
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+                // view 사이즈크기 설정
+                final float diffScaledOffset = slideOffset * (1- END_SCALE);
+                final float offsetScale = 1-diffScaledOffset;
+                contenView.setScaleX(offsetScale);
+                contenView.setScaleY(offsetScale);
+
+                super.onDrawerSlide(drawerView, slideOffset);
+
+                // translatate 설정
+                final float xOffset = drawerView.getWidth() * slideOffset;
+                final float xOffsetDiff = contenView.getWidth() * diffScaledOffset / 2;
+                final float xTranslation = xOffset - xOffsetDiff;
+                contenView.setTranslationX(xTranslation);
+            }
+        }); {
+
+
+
+        };
+
+    }
+
     @Override
     public void onBackPressed(){
         if(drawerLayout.isDrawerVisible(GravityCompat.START)){
@@ -78,6 +123,8 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
         }else
             super.onBackPressed();
     }
+
+    //좌측메뉴 클릭시 Activity 이동
 
 
 
@@ -136,6 +183,13 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_products:
+                startActivity(new Intent(getApplicationContext(), AllCategories.class));
+                break;
+        }
+
+
         return false;
     }
 }
