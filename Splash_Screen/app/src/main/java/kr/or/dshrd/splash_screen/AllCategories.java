@@ -22,7 +22,6 @@ public class AllCategories extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // super => 눌렀을때
 //                AllCategories.super.onBackPressed();
                 startActivity(new Intent(getApplicationContext(), Main_page.class));
             }

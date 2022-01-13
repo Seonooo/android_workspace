@@ -187,6 +187,12 @@ public class Main_page extends AppCompatActivity implements NavigationView.OnNav
             case R.id.nav_products:
                 startActivity(new Intent(getApplicationContext(), AllCategories.class));
                 break;
+            case R.id.nav_login:
+                startActivity(new Intent(getApplicationContext(), Login.class));
+                break;
+
+
+
         }
 
 

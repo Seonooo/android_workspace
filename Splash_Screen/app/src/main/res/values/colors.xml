@@ -13,7 +13,7 @@
     <!-- mainpage color-->
 
     <!-- Body and Background colors -->
-    <color name="main_background">#F2F2F2</color>
+    <color name="main_background">#F5F5F8</color>
     <!-- Contents Colors   -->
     <color name="order_background">#E8F9FA</color>
     <!-- rating color -->

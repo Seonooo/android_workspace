@@ -13,6 +13,9 @@
             android:name=".Join"
             android:exported="false" />
         <activity
+            android:name=".MainHome"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

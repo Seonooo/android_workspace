@@ -5,6 +5,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainHome"
-    android:background=" ">
+    android:background="@drawable/main_home_back">
+
+    <Button
+        android:id="@+id/main_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/btn_back"/>
+
+
+    <Button
+        android:id="@+id/main_mercury"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@color/btn_back"
+        android:text="mercury"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_sun" />
+
+    <Button
+        android:id="@+id/main_venus"
+        android:layout_width="87dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:background="@color/btn_back"
+        android:text="Venus"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_sun"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_earth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/btn_back"
+        android:text="Earth"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_mercury"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/btn_back"
+        android:text="Mars"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_venus"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_jupiter"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/btn_back"
+        android:text="Jupiter"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_mars"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_saturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/btn_back"
+        android:text="Saturn"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_jupiter"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_uranus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:background="@color/btn_back"
+        android:text="Uranus"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_neptune"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_saturn"
+        app:layout_constraintVertical_bias="0.512"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/main_neptune"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="140dp"
+        android:background="@color/btn_back"
+        android:text="Neptune"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
