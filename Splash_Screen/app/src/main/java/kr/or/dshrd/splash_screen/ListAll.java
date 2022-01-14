@@ -38,10 +38,6 @@ public class ListAll extends AppCompatActivity {
         search_bottom_recyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         search_bottom_recyclerview.setAdapter(adapter);
 
-
-
-
-
         searchtopLocation.add(new SearchHelperClassTop(R.drawable.pro_img_03, "Pro_01"));
         searchtopLocation.add(new SearchHelperClassTop(R.drawable.pro_img_03, "Pro_02"));
         searchtopLocation.add(new SearchHelperClassTop(R.drawable.pro_img_03, "Pro_03"));
@@ -50,14 +46,11 @@ public class ListAll extends AppCompatActivity {
         searchtopLocation.add(new SearchHelperClassTop(R.drawable.pro_img_03, "Pro_06"));
         searchtopLocation.add(new SearchHelperClassTop(R.drawable.pro_img_03, "Pro_07"));
 
-
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
         searchbottomLocation.add(new SearchHelperClassBottom(R.drawable.pro_img_04, "Apple", "2020 Apple iPad Air 10.9", "★★★☆☆"));
-
-
     }
 }

@@ -10,14 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Splash_Screen">
         <activity
-            android:name=".ListAll"
-            android:exported="true">
+            android:name=".Sub_Page"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ListAll"
+            android:exported="false"/>
         <activity
             android:name=".AllCategories"
             android:exported="false" />
@@ -35,9 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"/>
     </application>
 
 </manifest>
