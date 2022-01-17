@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_margin="10dp"
+    android:orientation="horizontal">
+
+    <!--  리스트뷰 순서 표시할 TextView  -->
+    <TextView
+        android:id="@+id/item_no"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:text="번호" />
+
+    <!--  리스트뷰 아이템 내용 'Title'  -->
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:gravity="center_vertical"
+        android:text="제목"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="2.5"
+        android:textSize="17sp"
+        android:text="내용"/>
+
+    <TextView
+        android:id="@+id/item_hit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:textSize="17sp"
+        android:text="조회수"/>
+
+    <TextView
+        android:id="@+id/item_date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1.5"
+        android:textSize="17dp"
+        android:text="등록일"/>
+
+</LinearLayout>

@@ -1,7 +1,5 @@
 package kr.or.dshrd.splash_screen.HelperClass.HomeAdapter;
 
-import android.widget.RatingBar;
-
 public class OrderHelperClass {
 
     int image;

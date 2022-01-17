@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/button.xml" value="0.36923076923076925" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_item_list.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_join.xml" value="0.34427083333333336" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_login.xml" value="0.34427083333333336" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_main_home.xml" value="0.35885416666666664" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/item.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/on_boarding.xml" value="0.35885416666666664" />
       </map>
     </option>
