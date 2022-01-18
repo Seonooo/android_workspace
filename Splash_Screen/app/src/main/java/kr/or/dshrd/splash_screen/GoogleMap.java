@@ -2,15 +2,16 @@ package kr.or.dshrd.splash_screen;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
@@ -20,7 +21,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -39,10 +39,10 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
     boolean isPermissionGranted;
     FloatingActionButton fab;
     private FusedLocationProviderClient mLocationClient;
+    private int GPS_REQUEST_CODE = 9001;
 
     com.google.android.gms.maps.GoogleMap mGoogleMap;
-
-//    MapView mapView;
+    // MapView mapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +52,8 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
         //Hooks
         fab = findViewById(R.id.fab);
 
-//        mapView = findViewById(R.id.map_view);
-//        mapView.onCreate(savedInstanceState);
+        // mapView = findViewById(R.id.map_view);
+        // mapView.onCreate(savedInstanceState);
 
         // 변수 정의
         checkPermission();
@@ -77,15 +77,33 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
 
     private void initMap() {
         if(isPermissionGranted){
-            try {
+            if(isGPSenable()){
                 SupportMapFragment supportMapFragment =
                         (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
                 supportMapFragment.getMapAsync(this);
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
 
+    }
+
+    private boolean isGPSenable(){
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        boolean providerEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+        if(providerEnable){
+            return true;
+        }else{
+            // 경고창
+            AlertDialog alertDialog = new AlertDialog.Builder(this).setTitle("GPS Permission")
+                            .setMessage("GPS is required for this app to work. Please enable GPS")
+                    .setPositiveButton("Yes", ((dialogInterface, i) -> {
+                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivityForResult(intent, GPS_REQUEST_CODE);
+                    }))
+                    .setCancelable(false)
+                    .show();
+        }
+        return false;
     }
 
     @SuppressLint("MissingPermission")
@@ -106,7 +124,7 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
                 .title("Point"));
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(LatLng));
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 18);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(LatLng, 15);
         mGoogleMap.moveCamera(cameraUpdate);
         mGoogleMap.setMapType(com.google.android.gms.maps.GoogleMap.MAP_TYPE_NORMAL);
     }
@@ -145,7 +163,7 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
     @Override
     public void onMapReady(@NonNull com.google.android.gms.maps.GoogleMap googleMap) {
         mGoogleMap = googleMap;
-//        mGoogleMap.setMyLocationEnabled(true);
+        mGoogleMap.setMyLocationEnabled(true);
     }
 
     @Override
@@ -162,6 +180,26 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
+//    GPS 활성화 메세지
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == GPS_REQUEST_CODE){
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            boolean providerEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+            if(providerEnable){
+                Toast.makeText(this, "GPS is enable", Toast.LENGTH_SHORT).show();
+
+            }
+            else{
+                Toast.makeText(this, "GPS is not enable", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 
     // mapview 설정
 

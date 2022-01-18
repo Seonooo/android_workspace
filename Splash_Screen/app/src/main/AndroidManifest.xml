@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.or.dshrd.splash_screen">
-
     <!-- 사용권한 설정 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,18 +22,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Splash_Screen">
         <activity
-            android:name=".GoogleMap"
+            android:name=".LottieAnim"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
-
+        <activity
+            android:name=".GoogleMap"
+            android:exported="false"/>
         <activity
             android:name=".Sub_Page"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ListAll"
             android:exported="false" />
@@ -58,23 +56,17 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- 구글 지도 셋팅 -->
+            android:exported="false" /> <!-- 구글 지도 셋팅 -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <!-- Api 키 설정 -->
+            android:required="false" /> <!-- Api 키 설정 -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBc1ASxoPsgrWvgwF4qBpTDD7KwU_lD1uY" />
-
-
     </application>
 
 </manifest>
