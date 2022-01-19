@@ -30,7 +30,7 @@ public class MainHome extends AppCompatActivity {
         coll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ItemCategories.class);
+                Intent intent = new Intent(getApplicationContext(), Collection.class);
                 startActivity(intent);
             }
         });

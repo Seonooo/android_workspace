@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -33,6 +37,10 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     // 위치 잘 보기
@@ -44,6 +52,9 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
     com.google.android.gms.maps.GoogleMap mGoogleMap;
     // MapView mapView;
 
+    EditText locSearch;
+    ImageView searchIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +62,9 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
 
         //Hooks
         fab = findViewById(R.id.fab);
+
+        locSearch = findViewById(R.id.et_search);
+        searchIcon = findViewById(R.id.search_icon);
 
         // mapView = findViewById(R.id.map_view);
         // mapView.onCreate(savedInstanceState);
@@ -68,11 +82,35 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
             }
         });
 
+        searchIcon.setOnClickListener(this::getCurrLoc);
+
 
 //        if(isPermissionGranted){
 //            mapView.getMapAsync(this);
 //        }
 
+    }
+
+    private void getCurrLoc(View view) {
+        String locationName = locSearch.getText().toString();
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        
+        // 검색 목적을 위해 지오코더 Api를 사용하고 그 지역을 기본값으로 설정
+        // 문자열로 반환
+        try {
+            List<Address> addressList = geocoder.getFromLocationName(locationName, 1);
+
+            if(addressList.size()>0){
+                Address address = addressList.get(0);
+
+                gotoLocation(address.getLatitude(), address.getLongitude());
+                mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(address.getLatitude(), address.getLongitude())));
+                Toast.makeText(this,address.getLocality(), Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initMap() {
@@ -117,7 +155,7 @@ public class GoogleMap extends AppCompatActivity implements OnMapReadyCallback, 
     }
 
     private void gotoLocation(double latitude, double longitude) {
-        LatLng LatLng = new LatLng(35.15265925078468, 129.059647);
+        LatLng LatLng = new LatLng(latitude, longitude);
 
         mGoogleMap.addMarker(new MarkerOptions()
                 .position(LatLng)

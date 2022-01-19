@@ -35,15 +35,6 @@
         android:text="내용"/>
 
     <TextView
-        android:id="@+id/item_hit"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:layout_weight="1"
-        android:textSize="17sp"
-        android:text="조회수"/>
-
-    <TextView
         android:id="@+id/item_date"
         android:layout_width="0dp"
         android:layout_height="match_parent"

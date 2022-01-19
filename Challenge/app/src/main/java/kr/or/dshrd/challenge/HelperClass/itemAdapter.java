@@ -36,7 +36,6 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
         holder.no.setText(itemHelperClass.getNo());
         holder.title.setText(itemHelperClass.getTitle());
         holder.content.setText(itemHelperClass.getContent());
-        holder.hit.setText(itemHelperClass.getHit());
         holder.date.setText(itemHelperClass.getDate());
 
     }
@@ -48,7 +47,7 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, no, content, hit, date;
+        TextView title, no, content, date;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,7 +56,6 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
             no = itemView.findViewById(R.id.item_no);
             title = itemView.findViewById(R.id.item_title);
             content = itemView.findViewById(R.id.item_content);
-            hit = itemView.findViewById(R.id.item_hit);
             date = itemView.findViewById(R.id.item_date);
         }
     }
