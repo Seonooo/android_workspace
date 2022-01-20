@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/border_line.xml" value="0.3611111111111111" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/button.xml" value="0.36923076923076925" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/ic_baseline_navigate_next_24.xml" value="0.35555555555555557" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/my_pro.xml" value="0.3527777777777778" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/my_profile.xml" value="0.3527777777777778" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/drawable/skip.xml" value="0.35555555555555557" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_collection.xml" value="0.33" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_item_list.xml" value="0.33" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_join.xml" value="0.34427083333333336" />
@@ -14,9 +18,11 @@
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_main_home.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/activity_paging.xml" value="0.18958333333333333" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/add_dialog.xml" value="0.35885416666666664" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/edit_box.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/item.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/on_boarding.xml" value="0.35885416666666664" />
         <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/pagenation.xml" value="0.34427083333333336" />
+        <entry key="..\:/android_workspace/Challenge/app/src/main/res/layout/slider.xml" value="0.35885416666666664" />
       </map>
     </option>
   </component>

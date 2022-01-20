@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import kr.or.dshrd.challenge.Common.OnBoarding;
+
 public class Join extends AppCompatActivity {
 
     Button join, login;
@@ -33,7 +35,7 @@ public class Join extends AppCompatActivity {
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainHome.class);
+                Intent intent = new Intent(getApplicationContext(), OnBoarding.class);
                 startActivity(intent);
             }
         });

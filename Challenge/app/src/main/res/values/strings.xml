@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Challenge</string>
+
+    <string name="slide_title_01">당신의 목표를 설정하세요!</string>
+    <string name="slide_title_02">매일 당신의 목표를 인증해보세요</string>
+    <string name="slide_title_03">당신의 뱃지를 수집하고 랭킹에 도전해보세요!</string>
+
 </resources>

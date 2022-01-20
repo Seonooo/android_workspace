@@ -7,6 +7,12 @@
     tools:context=".Collection"
     android:orientation="vertical">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_line">
     <ImageView
         android:id="@+id/col_back"
         android:layout_margin="20dp"
@@ -16,23 +22,32 @@
         android:src="@drawable/back"
         android:background="?attr/selectableItemBackground"/>
 
-    <TextView
-        android:id="@+id/col_main_tit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="나의 컬렉션"
-        android:textSize="36dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:background="@drawable/border_line"/>
+        <TextView
+            android:id="@+id/col_main_tit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="나의 컬렉션"
+            android:textColor="@color/black"
+            android:textSize="36dp" />
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/profile"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="right"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp">
         <TextView
             android:layout_width="wrap_content"

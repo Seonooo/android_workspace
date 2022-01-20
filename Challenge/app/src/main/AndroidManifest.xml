@@ -30,7 +30,7 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".OnBoarding"
+            android:name=".Common.OnBoarding"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
