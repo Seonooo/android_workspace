@@ -16,7 +16,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
 
 import kr.or.dshrd.challenge.R;
 
@@ -24,10 +23,11 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
 
     // 배열 선언
     private ArrayList<ItemHelperClass> itemLocation;
-    private Context context;
+    private Context mContext;
 
-    public itemAdapter(ArrayList<ItemHelperClass> itemLocation){
+    public itemAdapter(Context context,ArrayList<ItemHelperClass> itemLocation){
         this.itemLocation = itemLocation;
+        mContext = context;
     }
 
     @NonNull
@@ -72,8 +72,8 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
 
         @Override
         public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-            MenuItem Edit = contextMenu.add(Menu.NONE, 1001, 1, "Edit");
-            MenuItem Delete = contextMenu.add(Menu.NONE, 1002, 2, "Delete");
+            MenuItem Edit = contextMenu.add(Menu.NONE, 1001, 1, "수정");
+            MenuItem Delete = contextMenu.add(Menu.NONE, 1002, 2, "삭제");
             Edit.setOnMenuItemClickListener(onEditMenu);
             Delete.setOnMenuItemClickListener(onEditMenu);
 
@@ -84,14 +84,14 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case 1001 :
-                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                        View view = LayoutInflater.from(context).inflate(R.layout.add_dialog, null, false);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        View view = LayoutInflater.from(mContext).inflate(R.layout.add_dialog, null, false);
                         builder.setView(view);
-                        final Button editBtn = (Button) view.findViewById(R.id.dialog_add);
-                        final EditText editNo = (EditText) view.findViewById(R.id.dialog_no);
-                        final EditText edit_title = (EditText) view.findViewById(R.id.dialog_title);
-                        final EditText editContent = (EditText) view.findViewById(R.id.dialog_content);
-                        final EditText editDate = (EditText) view.findViewById(R.id.dialog_date);
+                        final Button editBtn = view.findViewById(R.id.dialog_add);
+                        final EditText editNo = view.findViewById(R.id.dialog_no);
+                        final EditText edit_title = view.findViewById(R.id.dialog_title);
+                        final EditText editContent = view.findViewById(R.id.dialog_content);
+                        final EditText editDate = view.findViewById(R.id.dialog_date);
 
                         editNo.setText(itemLocation.get(getAdapterPosition()).getNo());
                         edit_title.setText(itemLocation.get(getAdapterPosition()).getTitle());
@@ -99,21 +99,18 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
                         editDate.setText(itemLocation.get(getAdapterPosition()).getDate());
 
                         final AlertDialog dialog = builder.create();
-                        editBtn.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                String strNo = editNo.getText().toString();
-                                String strTitle = edit_title.getText().toString();
-                                String strContent = editContent.getText().toString();
-                                String strDate = editDate.getText().toString();
+                        editBtn.setOnClickListener(view1 -> {
+                            String strNo = editNo.getText().toString();
+                            String strTitle = edit_title.getText().toString();
+                            String strContent = editContent.getText().toString();
+                            String strDate = editDate.getText().toString();
 
-                                ItemHelperClass dict = new ItemHelperClass(strNo, strTitle, strContent, strDate);
+                            ItemHelperClass dict = new ItemHelperClass(strNo, strTitle, strContent, strDate);
 
-                                itemLocation.set(getAdapterPosition(), dict);
+                            itemLocation.set(getAdapterPosition(), dict);
 
-                                notifyItemChanged(getAdapterPosition());
-                                dialog.dismiss();
-                            }
+                            notifyItemChanged(getAdapterPosition());
+                            dialog.dismiss();
                         });
 
                         dialog.show();

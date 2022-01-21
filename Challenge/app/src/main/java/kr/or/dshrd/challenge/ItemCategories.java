@@ -38,7 +38,7 @@ public class ItemCategories extends AppCompatActivity {
 
         ArrayList<ItemHelperClass> itemLocation = new ArrayList<>();
         itemRecycler = findViewById(R.id.list_view);
-        adapter = new itemAdapter(itemLocation);
+        adapter = new itemAdapter(this, itemLocation);
         itemRecycler.setLayoutManager(new LinearLayoutManager( this, LinearLayoutManager.VERTICAL,false));
         itemRecycler.setAdapter(adapter);
 
@@ -89,15 +89,18 @@ public class ItemCategories extends AppCompatActivity {
             }
         });
 
-
-
-
-        itemLocation.add(new ItemHelperClass("no", "title","content","date"));
-        itemLocation.add(new ItemHelperClass("1", "naan","aksdk","2022-01-17"));
-        itemLocation.add(new ItemHelperClass("1", "naan","aksdk","2022-01-17"));
-        itemLocation.add(new ItemHelperClass("1", "naan","aksdk","2022-01-17"));
+        itemLocation.add(new ItemHelperClass("11", "11일차","운동","2022-01-21"));
+        itemLocation.add(new ItemHelperClass("10", "10일차","독서","2022-01-20"));
+        itemLocation.add(new ItemHelperClass("9", "9일차","운동","2022-01-19"));
+        itemLocation.add(new ItemHelperClass("8", "8일차","독서","2022-01-18"));
+        itemLocation.add(new ItemHelperClass("7", "7일차","운동","2022-01-17"));
+        itemLocation.add(new ItemHelperClass("6", "6일차","독서","2022-01-16"));
+        itemLocation.add(new ItemHelperClass("5", "5일차","운동","2022-01-15"));
+        itemLocation.add(new ItemHelperClass("4", "4일차","독서","2022-01-14"));
+        itemLocation.add(new ItemHelperClass("4", "4일차","독서","2022-01-14"));
+        itemLocation.add(new ItemHelperClass("3", "3일차","운동","2022-01-13"));
+        itemLocation.add(new ItemHelperClass("2", "2일차","독서","2022-01-12"));
+        itemLocation.add(new ItemHelperClass("1", "1일차","운동","2022-01-11"));
     }
-
-
 }
 

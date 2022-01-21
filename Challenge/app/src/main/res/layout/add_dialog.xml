@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="350dp"
+    android:layout_height="250dp"
     android:orientation="vertical"
-    android:layout_margin="39dp">
+    android:layout_gravity="center"
+    android:layout_margin="40dp">
 
         <EditText
             android:id="@+id/dialog_no"
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:layout_gravity="right"
-        android:text="Edit"
+        android:text="삭제"
         android:layout_marginRight="20dp"/>
 
 
